@@ -70,3 +70,133 @@
 
 // export default App;
 //use State Practice:3(to do list)
+// import React, { useState } from "react";
+
+// const App = () => {
+//   const [list, setList] = useState([]);
+//   const [item, setItem] = useState("");
+//   const addToList = () => {
+//     if (item.trim !== "") {
+//       setList([...list, item]);
+//       setItem("");
+//     }
+//   };
+//   const RemoveItem = () => {};
+//   return (
+//     <div>
+//       <table>
+//         <tbody>
+//           {item.length !== 0 ? (
+//             list.map((element, i) => (
+//               <tr key={i}>
+//                 <td>{element}</td>
+//                 <td>
+//                   <button>Remove</button>
+//                 </td>
+//               </tr>
+//             ))
+//           ) : (
+//             <tr>
+//               <td colSpan={2}> no items found</td>
+//             </tr>
+//           )}
+//         </tbody>
+//       </table>
+//       <input
+//         onChange={(e) => setItem(e.target.value)}
+//         type="text"
+//         placeholder="Item"
+//       />
+//       <button onClick={addToList}>Add</button>
+//     </div>
+//   );
+// };
+
+// export default App;
+// import React, { useState } from "react";
+
+// const App = () => {
+//   let [FormObj, setFormObj] = useState({
+//     fName: "",
+//     lName: "",
+//     city: "",
+//     gender: "Male",
+//   });
+//   const changeHandler = (property, value) => {
+//     setFormObj((preObj) => ({
+//       ...preObj,
+//       [property]: value,
+//     }));
+//   };
+//   const formSubmit = (e) => {
+//     e.preventDefault();
+//     alert(JSON.stringify(FormObj));
+//   };
+//   return (
+//     <div className="container">
+//       <form onSubmit={formSubmit}>
+//         <input
+//           onChange={(e) => {
+//             changeHandler("fName", e.target.value);
+//           }}
+//           value={FormObj.fName}
+//           type="text"
+//           placeholder="First name"
+//         />
+//         <br /> <br />
+//         <input
+//           onChange={(e) => {
+//             changeHandler("lName", e.target.value);
+//           }}
+//           value={FormObj.lName}
+//           type="text"
+//           placeholder="last name"
+//         />
+//         <br /> <br />
+//         <select
+//           onChange={(e) => {
+//             changeHandler("city", e.target.value);
+//           }}
+//           value={FormObj.city}
+//         >
+//           <option value="">Choose City</option>
+//           <option value="Dhaka">Dhaka</option>
+//           <option value="Rangpur">Rangpur</option>
+//         </select>
+//         <br /> <br />
+//         <input
+//           onChange={() => {
+//             changeHandler("gender", "Male");
+//           }}
+//           checked={FormObj.gender === "Male"}
+//           type="radio"
+//           name="gender"
+//         />
+//         Male
+//         <input
+//           onChange={() => {
+//             changeHandler("gender", "Female");
+//           }}
+//           checked={FormObj.gender === "Female"}
+//           type="radio"
+//           name="gender"
+//         />
+//         Female
+//         <br />
+//         <button type="submit">Submit</button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default App;
+import React, { useEffect } from "react";
+
+const App = () => {
+  useEffect(() => {
+    console.log("hello");
+  }, []);
+  return <div></div>;
+};
+
+export default App;
