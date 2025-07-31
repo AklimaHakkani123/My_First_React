@@ -214,18 +214,41 @@
 // };
 
 // export default App;
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
+
+// const App = () => {
+//   const [data, setData] = useState();
+//   useEffect(() => {
+//     (async () => {
+//       let response = await fetch("https://dummyjson.com/products/1");
+//       let json = await response.json();
+//       setData(json);
+//     })();
+//   });
+//   return <div>{JSON.stringify(data)}</div>;
+// };
+
+// export default App;
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Homepage from "./pages/Homepage";
+import Productpage from "./pages/Productpage";
+import Profilepage from "./pages/Profilepage";
+import Notfoundpage from "./pages/Notfoundpage";
 
 const App = () => {
-  const [data, setData] = useState();
-  useEffect(() => {
-    (async () => {
-      let response = await fetch("https://dummyjson.com/products/1");
-      let json = await response.json();
-      setData(json);
-    })();
-  });
-  return <div>{JSON.stringify(data)}</div>;
+  return (
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/Product" element={<Productpage />} />
+          <Route path="/profile" element={<Profilepage />} />
+          <Route path="*" element={<Notfoundpage />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 };
 
 export default App;

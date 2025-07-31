@@ -1,13 +1,13 @@
 import React from "react";
 import Menu from "../component/Menu";
 
-const Homepage = () => {
+const Notfoundpage = () => {
   return (
     <div>
       <Menu />
-      <h1>This is Home Page</h1>
+      <h1>404 Not Found Page</h1>
     </div>
   );
 };
 
-export default Homepage;
+export default Notfoundpage;
