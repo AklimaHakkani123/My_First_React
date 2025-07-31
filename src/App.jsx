@@ -190,13 +190,27 @@
 // };
 
 // export default App;
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
+
+// const App = () => {
+//   useEffect(() => {
+//     console.log("hello");
+//   }, []);
+//   return <div></div>;
+// };
+
+// export default App;
+import React, { useEffect, useState } from "react";
 
 const App = () => {
+  const [data, setData] = useState();
   useEffect(() => {
-    console.log("hello");
+    fetch("https://dummyjson.com/products/1")
+      .then((res) => res.json())
+      .then((json) => setData(json));
   }, []);
-  return <div></div>;
+
+  return <div>{JSON.stringify(data)}</div>;
 };
 
 export default App;
