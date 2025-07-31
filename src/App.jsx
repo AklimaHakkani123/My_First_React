@@ -200,16 +200,31 @@
 // };
 
 // export default App;
+// import React, { useEffect, useState } from "react";
+
+// const App = () => {
+//   const [data, setData] = useState();
+//   useEffect(() => {
+//     fetch("https://dummyjson.com/products/1")
+//       .then((res) => res.json())
+//       .then((json) => setData(json));
+//   }, []);
+
+//   return <div>{JSON.stringify(data)}</div>;
+// };
+
+// export default App;
 import React, { useEffect, useState } from "react";
 
 const App = () => {
   const [data, setData] = useState();
   useEffect(() => {
-    fetch("https://dummyjson.com/products/1")
-      .then((res) => res.json())
-      .then((json) => setData(json));
-  }, []);
-
+    (async () => {
+      let response = await fetch("https://dummyjson.com/products/1");
+      let json = await response.json();
+      setData(json);
+    })();
+  });
   return <div>{JSON.stringify(data)}</div>;
 };
 
