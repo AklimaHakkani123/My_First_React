@@ -16,6 +16,9 @@ const Menu = () => {
             <Link to="/profile">Profile</Link>
           </li>
           <li>
+            <Link to={"/logout"}>LogOut</Link>
+          </li>
+          <li>
             <Link to="/notfound">Notfound</Link>
           </li>
         </ul>

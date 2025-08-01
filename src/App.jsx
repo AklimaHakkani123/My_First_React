@@ -235,6 +235,7 @@ import Homepage from "./pages/Homepage";
 import Productpage from "./pages/Productpage";
 import Profilepage from "./pages/Profilepage";
 import Notfoundpage from "./pages/Notfoundpage";
+import LogOutPage from "./pages/LogOutPage";
 
 const App = () => {
   return (
@@ -244,6 +245,7 @@ const App = () => {
           <Route path="/" element={<Homepage />} />
           <Route path="/Product" element={<Productpage />} />
           <Route path="/profile" element={<Profilepage />} />
+          <Route path="/logut" element={<LogOutPage />} />
           <Route path="*" element={<Notfoundpage />} />
         </Routes>
       </BrowserRouter>
