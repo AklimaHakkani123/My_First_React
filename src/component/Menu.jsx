@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Menu = () => {
   return (
@@ -7,19 +7,54 @@ const Menu = () => {
       <div>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "active-item" : "pending-item"
+              }
+              to="/"
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to="/product">Product</Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "active-item" : "pending-item"
+              }
+              to="/product/10/hima"
+            >
+              Product
+            </NavLink>
           </li>
           <li>
-            <Link to="/profile">Profile</Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "active-item" : "pending-item"
+              }
+              to="/profile"
+            >
+              Profile
+            </NavLink>
           </li>
           <li>
-            <Link to={"/logout"}>LogOut</Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "active-item" : "pending-item"
+              }
+              to={"/logout"}
+            >
+              LogOut
+            </NavLink>
           </li>
           <li>
-            <Link to="/notfound">Notfound</Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "active-item" : "pending-item"
+              }
+              to="/notfound"
+            >
+              Notfound
+            </NavLink>
           </li>
         </ul>
       </div>

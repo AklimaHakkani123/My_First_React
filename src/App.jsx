@@ -243,7 +243,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/Product" element={<Productpage />} />
+          <Route path="/Product/:id/:name" element={<Productpage />} />
           <Route path="/profile" element={<Profilepage />} />
           <Route path="/logut" element={<LogOutPage />} />
           <Route path="*" element={<Notfoundpage />} />
